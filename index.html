@@ -33,19 +33,24 @@
     <div class="wrap_2">
         <div id="text"></div>
     </div>
-    <div class="wrap_2">
+    <div class="wrap_3">
         <div id="clock-box">
-            123
-            <div id="clock ">12</div>
+            <span id='youandme'>你与我的</span>
+            <div id="clock"></div>
         </div>
+    </div>
+    <div class="wrap_4">
+        <div id="text_2"></div>
     </div>
 </body>
 <script>
     let start = document.querySelector('.wrap')
-    let divTyping = document.getElementById('text')
+    let divTyping = document.querySelector('#text'),
+        divTyping_2 = document.querySelector('#text_2')
     let i = 0,
         timer = 0,
-        str = '位特殊特性：<br>1. 行内元素添加绝对或者固定定位， 可以 == 直接设置高度和宽度 ==<br>2. 块级元素添加绝对或者固定定位， == 如果不给宽度或者高度， 默认大小是内容的大小 ==<br>3. 图表的盒子不会触发外边距塌陷：'
+        str = '位特殊特性：<br>1. 行内元素添加绝对或者固定定位， 可以 == 直接设置高度和宽度 ==<br>2. 块级元素添加绝对或者固定定位， == 如果不给宽度或者高度， 默认大小是内容的大小 ==<br>3. 图表的盒子不会触发外边距塌陷：',
+        str_2 = '1111位特殊特性：<br>1. 行内元素添加绝对或者固定定位， 可以 == 直接设置高度和宽度 ==<br>2. 块级元素添加绝对或者固定定位， == 如果不给宽度或者高度， 默认大小是内容的大小 ==<br>3. 图表的盒子不会触发外边距塌陷：'
 
 
     function typing() {
@@ -56,6 +61,20 @@
             divTyping.innerHTML = str //结束打字,移除 _ 光标
             clearTimeout(timer)
         }
+    }
+
+    function typing_2() {
+        if (i <= str_2.length) {
+            divTyping_2.innerHTML = str_2.slice(0, i++) + '_'
+            timer = setTimeout(typing_2, 200)
+        } else {
+            divTyping.innerHTML = str_2 //结束打字,移除 _ 光标
+            clearTimeout(timer)
+        }
+    }
+    start.onclick = function() {
+        typing()
+        typing_2()
     }
 
     function timeElapse(date) {
@@ -76,13 +95,13 @@
         if (seconds < 10) {
             seconds = "0 " + seconds;
         }
-        var result = "第 <span class=\"digit\">" + days + "</span> 天 <span class=\"digit\">" + hours + "</span> 小时 <span class=\"digit\">" + minutes + "</span> 分钟 <span class=\"digit\">" + seconds + "</span> 秒";
+        var result = "<br>第 <span class=\"digit\">" + days + "</span> 天 <span class=\"digit\">" + hours + "</span> 小时 <span class=\"digit\">" + minutes + "</span> 分钟 <span class=\"digit\">" + seconds + "</span> 秒";
         return result
     }
 
-    function show_time() {
+    setInterval(function show_time() {
         let together = new Date();
-        let clock_time = document.querySelector('#clock-box')
+        let clock_time = document.querySelector('#clock')
         together.setFullYear(2021, 9, 29);
         together.setHours(17);
         together.setMinutes(13);
@@ -90,14 +109,7 @@
         together.setMilliseconds(0);
         let result = timeElapse(together);
         clock_time.innerHTML = result;
-    }
-
-    show_time()
-    start.onclick = function() {
-        typing()
-
-
-    }
+    }, 1000)
 </script>
 
 </html>
