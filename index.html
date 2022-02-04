@@ -1,15 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Not Found</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>temp</title>
+    <link rel="stylesheet" href="css/index.css" />
 </head>
 
 <body>
-    <a href="https://cyancct.top">click here</a>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div class="wrap">
+        <div class="cube">
+            <div class="out-front"><img src="" class="pic"></div>
+            <div class="out-back"><img src="" class="pic"></div>
+            <div class="out-left"><img src="" class="pic"></div>
+            <div class="out-right"><img src="" class="pic"></div>
+            <div class="out-top"><img src="" class="pic"></div>
+            <div class="out-bottom"><img src="" class="pic"></div>
+        </div>
+    </div>
+    <div class="wrap_2">
+        <div id="text"></div>
+    </div>
+    <div class="wrap_2">
+        <div id="clock-box">
+            123
+            <div id="clock ">12</div>
+        </div>
+    </div>
 </body>
+<script>
+    let start = document.querySelector('.wrap')
+    let divTyping = document.getElementById('text')
+    let i = 0,
+        timer = 0,
+        str = '位特殊特性：<br>1. 行内元素添加绝对或者固定定位， 可以 == 直接设置高度和宽度 ==<br>2. 块级元素添加绝对或者固定定位， == 如果不给宽度或者高度， 默认大小是内容的大小 ==<br>3. 图表的盒子不会触发外边距塌陷：'
+
+
+    function typing() {
+        if (i <= str.length) {
+            divTyping.innerHTML = str.slice(0, i++) + '_'
+            timer = setTimeout(typing, 200)
+        } else {
+            divTyping.innerHTML = str //结束打字,移除 _ 光标
+            clearTimeout(timer)
+        }
+    }
+
+    function timeElapse(date) {
+        var current = Date();
+        var seconds = (Date.parse(current) - Date.parse(date)) / 1000;
+        var days = Math.floor(seconds / (3600 * 24));
+        seconds = seconds % (3600 * 24);
+        var hours = Math.floor(seconds / 3600);
+        if (hours < 10) {
+            hours = "0 " + hours;
+        }
+        seconds = seconds % 3600;
+        var minutes = Math.floor(seconds / 60);
+        if (minutes < 10) {
+            minutes = "0 " + minutes;
+        }
+        seconds = seconds % 60;
+        if (seconds < 10) {
+            seconds = "0 " + seconds;
+        }
+        var result = "第 <span class=\"digit\">" + days + "</span> 天 <span class=\"digit\">" + hours + "</span> 小时 <span class=\"digit\">" + minutes + "</span> 分钟 <span class=\"digit\">" + seconds + "</span> 秒";
+        return result
+    }
+
+    function show_time() {
+        let together = new Date();
+        let clock_time = document.querySelector('#clock-box')
+        together.setFullYear(2021, 9, 29);
+        together.setHours(17);
+        together.setMinutes(13);
+        together.setSeconds(0);
+        together.setMilliseconds(0);
+        let result = timeElapse(together);
+        clock_time.innerHTML = result;
+    }
+
+    show_time()
+    start.onclick = function() {
+        typing()
+
+
+    }
+</script>
 
 </html>
