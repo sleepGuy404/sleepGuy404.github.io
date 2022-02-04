@@ -23,7 +23,7 @@ ul {
 }
 
 ul::after {
-    content: 'this is special';
+    content: 'this is for you';
     position: absolute;
     top: 120px;
     left: 50%;
