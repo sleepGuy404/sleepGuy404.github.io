@@ -274,8 +274,9 @@
     #youandme {
         font-size: 30px;
         color: aquamarine;
+        text-align: center
     }
     
     #clock {
-        font-size: 28px;
+        font-size: 24px;
     }
