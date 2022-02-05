@@ -49,9 +49,7 @@
         divTyping_2 = document.querySelector('#text_2')
     let i = 0,
         timer = 0,
-        str = '<h2>亲爱的宝贝</h2><br>今天是我们在一起的第100天，',
-        str_2 = '1111位特殊特性：<br>1. 行元素添加绝对或者固定定位， 可以 == 直接设置高度和宽度 ==<br>3. 图表的盒子不会触发外边距塌陷：'
-
+        str = '<h2>亲爱的周宝宝&#9196;</h2><br><h4>&#9201;今天是我们在一起的第100天哦。&#11088;</h4><br>&#128568;从第一天到现在的第一百天，我们在一起，始终如一的相爱。我始终坚信我会永远爱你，因为宝宝你给了我太多太多的爱。<br>&#128293;我爱你宝宝，我爱你的所有，你的所有对我来说都是美好。我很幸运我们两能够从最开始的两个陌生人走到现在的这个地步，我不得不感叹于命运的奇妙，让你我在2020年的那个夏天相遇。<br>&#128149;未来的路还有很长，希望我的宝贝可以与我一起一起度过。<br>&#128152;余生很长，希望有我的宝宝陪伴。<br>&#127801;我爱你我的宝贝，我会永远永远爱着你。'
 
     function typing() {
         if (i <= str.length) {
@@ -63,18 +61,9 @@
         }
     }
 
-    function typing_2() {
-        if (i <= str_2.length) {
-            divTyping_2.innerHTML = str_2.slice(0, i++) + '_'
-            timer = setTimeout(typing_2, 200)
-        } else {
-            divTyping_2.innerHTML = str_2 //结束打字,移除 _ 光标
-            clearTimeout(timer)
-        }
-    }
     start.onclick = function() {
         typing()
-        typing_2()
+
     }
 
 
