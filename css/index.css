@@ -260,7 +260,7 @@
         font-family: KaiTi, 'Helvetica', 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
     }
     
-    .wrap_3 {
+    .wrap_4 {
         position: fixed;
         top: 100px;
         right: 100px;
@@ -268,7 +268,7 @@
         width: 400px;
         font-size: 24px;
         font-weight: 500;
-        font-family: KaiTi, 'Helvetica', 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+        font-family: KaiTi, Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
     }
     
     #youandme {

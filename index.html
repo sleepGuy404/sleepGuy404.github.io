@@ -49,8 +49,8 @@
         divTyping_2 = document.querySelector('#text_2')
     let i = 0,
         timer = 0,
-        str = '位特殊特性：<br>1. 行内元素添加绝对或者固定定位， 可以 == 直接设置高度和宽度 ==<br>2. 块级元素添加绝对或者固定定位， == 如果不给宽度或者高度， 默认大小是内容的大小 ==<br>3. 图表的盒子不会触发外边距塌陷：',
-        str_2 = '1111位特殊特性：<br>1. 行内元素添加绝对或者固定定位， 可以 == 直接设置高度和宽度 ==<br>2. 块级元素添加绝对或者固定定位， == 如果不给宽度或者高度， 默认大小是内容的大小 ==<br>3. 图表的盒子不会触发外边距塌陷：'
+        str = '位特定定陷：',
+        str_2 = '1111位特殊特性：<br>1. 行元素添加绝对或者固定定位， 可以 == 直接设置高度和宽度 ==<br>3. 图表的盒子不会触发外边距塌陷：'
 
 
     function typing() {
@@ -68,7 +68,7 @@
             divTyping_2.innerHTML = str_2.slice(0, i++) + '_'
             timer = setTimeout(typing_2, 200)
         } else {
-            divTyping.innerHTML = str_2 //结束打字,移除 _ 光标
+            divTyping_2.innerHTML = str_2 //结束打字,移除 _ 光标
             clearTimeout(timer)
         }
     }
